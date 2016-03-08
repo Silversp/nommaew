@@ -1,0 +1,71 @@
+*{
+	box-sizing: border-box;
+}
+@font-face{
+	font-family: Quark;
+	src:url("./Quark-LightBold/Quark-Light.otf");
+}
+.background1{
+	width: 100%;
+	min-height: 500px;
+	float: left;
+	background-image: url("../src/img/home1.jpg");
+	background-position: 0px 0px;
+	padding-top: 15%;
+	padding-left: 2%;
+
+}
+.background2{
+	width: 100%;
+	min-height: 500px;
+	float: left;
+	background-image: url("../src/img/home.jpg");
+	background-position: 0px -25px;
+	padding-top: 15%;
+	padding-left: 2%;
+}
+.background3{
+	width: 100%;
+	min-height: 500px;
+	float: left;
+	background-image: url("../src/img/home2.jpg");
+	background-position: 0px -10px;
+	padding-top: 15%;
+	padding-left: 2%;
+}
+.header{
+	background-color: rgba(255,255,255,0.8);
+	width: 25%;
+	padding: 20px 15px;
+	font-family: Quark;
+	font-size: 30px;
+	font-weight: 700;
+	float: left;
+}
+	.text{
+		width: 85%;
+		float: left;
+
+	}
+	.arrow{
+		width: 10%;
+		float: right;
+	}
+	.arrow img{
+		width: 100%;
+	}
+.header:hover{
+	background-color: rgba(0,0,0,0.8);
+	color:#fff;
+	cursor: pointer;
+}
+.body{
+	background-color: rgba(255,255,255,0.8);
+	width: 70%;
+	padding: 20px 15px;
+	font-family: Quark;
+	font-size: 24px;
+	margin:0 5px;
+	float: left;
+	line-height: 1.5;
+}

@@ -1,0 +1,63 @@
+*{
+	box-sizing: border-box;
+}
+@font-face{
+	font-family: Quark;
+	src:url("./Quark-LightBold/Quark-Light.otf");
+}
+.accombackground{
+	width: 100%;
+	min-height: 500px;
+	float: left;
+	background-image: url("../src/img/accom.jpg");
+	background-position: 0px -200px;
+	padding-top: 10%;
+	padding-left: 2%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.row{
+	width: 100%;
+	float: left;
+}
+	.col{
+		width: 20%;
+		float:left;
+		margin: 0px 30px;
+	}
+		.pic{
+			width: 100%;
+			float: left;
+        }
+			.pic img{
+				width: 100%;
+				height: 350px;
+				margin: -105px 0px;
+            }
+		.detail{
+			width: 100%;
+			float: left;
+			background-color: rgba(113,198,113,0.5);
+			font-family: Quark;
+			margin: 105px 0px;
+		}	
+		
+			.auccomheader{
+				float: left;
+				height: 35px;
+				width: 100%;
+				font-weight: 800;
+				color: rgb(0,0,255);
+                font-size: 22;
+                padding: 5px 15px ;
+			}
+			.detailText{
+				float: left;
+				width: 100%;
+				font-weight: 500;
+				font-size: 18;
+				color: rgb(0,0,0);
+				padding: 5px 15px ;
+
+			}   
+			

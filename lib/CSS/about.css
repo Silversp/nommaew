@@ -1,0 +1,76 @@
+*{
+	box-sizing: border-box;
+}
+@font-face{
+	font-family: Quark;
+	src:url("./Quark-LightBold/Quark-Light.otf");
+}
+.aboutbody{
+	background-color: rgba(255,255,255,0.8);
+	width: 70%;
+	padding: 20px 15px;
+	font-family: Quark;
+	font-size: 24px;
+	margin:-102 5px;
+	float: left;
+	line-height: 1.5;
+}
+.aboutbackground{
+	width: 100%;
+	min-height: 500px;
+	float: left;
+	background-image: url("../src/img/about.jpg");
+	background-position: 0px -2px;
+	padding-top: 10%;
+	padding-left: 2%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.row{
+	width:100%;
+	float: left;
+	margin:10px 0;
+}
+.bicycle{
+	width: 100%;
+	padding: 280px 10px;
+	background-image: url("../src/img/bicycle.jpg");
+	background-repeat: no-repeat;
+
+	}
+.horse{
+	width: 100%;
+	padding: 280px 10px;
+    background-image: url("../src/img/horse.jpg");
+	background-repeat: no-repeat;
+	margin-top: 55px;
+	}
+.picnic{
+	width: 100%;
+	padding: 280px 10px;
+    background-image: url("../src/img/Picnic.jpg");
+	background-repeat: no-repeat;
+	margin-top: 55px;
+	}
+.pool{
+	width: 100%;
+	padding: 280px 10px;
+    background-image: url("../src/img/pool.jpg");
+	background-repeat: no-repeat;
+	margin-top: 55px;
+	}
+.boat{
+	width: 100%;
+	padding: 280px 10px;
+    background-image: url("../src/img/boat.jpg");
+	background-repeat: no-repeat;
+	margin-top: 55px;
+	}
+.massage{
+	width: 100%;
+	padding: 360px 10px;
+    background-image: url("../src/img/massage.jpg");
+	background-repeat: no-repeat;
+	margin-top: 55px;
+	}	

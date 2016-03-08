@@ -1,0 +1,15 @@
+@font-face{
+	font-family: Quark;
+	src:url("./Quark-LightBold/Quark-Light.otf");
+}
+.gallerybackground{
+	width: 100%;
+	min-height: 500px;
+	float: left;
+	background-image: url("../src/img/gallery.jpg");
+	background-position: 0px -200px;
+	padding-top: 10%;
+	padding-left: 2%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}

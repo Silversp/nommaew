@@ -1,0 +1,23 @@
+*{
+	box-sizing: border-box;
+}
+@font-face{
+	font-family: Quark;
+	src:url("./Quark-LightBold/Quark-Light.otf");
+}
+.contactusbackground{
+	width: 100%;
+	min-height: 500px;
+	float: left;
+	background-image: url("../src/img/contact.jpg");
+	background-position: 0px -200px;
+	padding-top: 10%;
+	padding-left: 2%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.row{
+	width:100%;
+	float: left;
+	margin:10px 0;
+}

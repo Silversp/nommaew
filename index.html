@@ -1,0 +1,98 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+
+	
+	<script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="node_modules/angular-local-storage/src/angular-local-storage.js"></script>
+	<script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+	<script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places"></script>
+	
+	<script type="text/javascript" src="lib/src/component/home/home.js"></script>
+	<script type="text/javascript" src="lib/src/component/accom/accom.js"></script>
+	<script type="text/javascript" src="lib/src/component/accom_popup/accomPopup.js"></script>
+	<script type="text/javascript" src="lib/src/component/login/login.js"></script>
+
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="route.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="./lib/css/nav.css">
+	<link rel="stylesheet" type="text/css" href="./lib/css/home.css">
+	<link rel="stylesheet" type="text/css" href="./lib/css/about.css">
+	<link rel="stylesheet" type="text/css" href="./lib/css/login.css">
+	<link rel="stylesheet" type="text/css" href="./lib/css/contactus.css">
+	<link rel="stylesheet" type="text/css" href="./lib/css/accom.css">
+	<link rel="stylesheet" type="text/css" href="./lib/css/package.css">
+	<link rel="stylesheet" type="text/css" href="./lib/css/gallery.css">
+	<link rel="stylesheet" type="text/css" href="./lib/css/accom-popup.css">
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body ng-app='appModule'>
+	<div class="nav-bar" ng-controller="appRun">
+		<div class="logo">
+			<img src="./lib/src/img/NMLG.png">
+		</div>
+		<div class="menu">
+			<div class="icon" ng-class="{'icon-active':show[0]}" ng-click="changeStage(0)" ng-mouseover = "hover[0] = true" ng-mouseleave="hover[0] = false">
+				<img src="./lib/src/img/homes.png">
+				<div class="icon-detail" style="width: 85px;" ng-if="show[0]||hover[0]">
+				หน้าหลัก
+				</div>
+			</div>
+			<div class="icon" ng-class="{'icon-active':show[1]}" ng-click="changeStage(1)" ng-mouseover = "hover[1] = true" ng-mouseleave="hover[1] = false">
+				<img src="./lib/src/img/social-network23.png">
+				<div class="icon-detail" style="width: 110px;" ng-if="show[1]||hover[1]">
+				เกี่ยวกับเรา
+				</div>
+			</div>
+			<div class="icon" ng-class="{'icon-active':show[2]}" ng-click="changeStage(2)" ng-mouseover = "hover[2] = true" ng-mouseleave="hover[2] = false">
+				<img src="./lib/src/img/grid4.png">
+				<div class="icon-detail" style="width: 135px;" ng-if="show[2]||hover[2]">
+				รูปแบบห้องพัก
+				</div>
+			</div>
+			<div class="icon" ng-class="{'icon-active':show[3]}" ng-click="changeStage(3)" ng-mouseover = "hover[3] = true" ng-mouseleave="hover[3] = false">
+				<img src="./lib/src/img/web3.png">
+				<div class="icon-detail"  ng-if="show[3]||hover[3]">
+				แพ็คเกจ
+				</div>
+			</div>
+			<div class="icon" ng-class="{'icon-active':show[4]}" ng-click="changeStage(4)" ng-mouseover = "hover[4] = true" ng-mouseleave="hover[4] = false">
+				<img src="./lib/src/img/avatar15.png">
+				<div class="icon-detail" style="width: 120px;" ng-if="show[4]||hover[4]">
+				ระบบสมาชิก
+				</div>
+			</div>
+			<div class="icon" ng-class="{'icon-active':show[5]}" ng-click="changeStage(5)" ng-mouseover = "hover[5] = true" ng-mouseleave="hover[5] = false">
+				<img src="./lib/src/img/page54.png">
+				<div class="icon-detail" style="width: 125px;" ng-if="show[5]||hover[5]">
+				คลังภาพ
+				</div>
+			</div>
+			<div class="icon" ng-class="{'icon-active':show[6]}" ng-click="changeStage(6)" ng-mouseover = "hover[6] = true" ng-mouseleave="hover[6] = false">
+				<img src="./lib/src/img/letter107.png">
+				<div class="icon-detail" style="width: 110px;" ng-if="show[6]||hover[6]">
+				ติดต่อเรา
+				</div>
+			</div>
+		</div>
+		<div class="user">
+			<div class="button" ng-click="login()">
+				Login
+			</div> 
+
+		</div>
+	</div>
+	<div ui-view></div>
+	<div class="footer"></div>
+</body>
+</html>
+
+
+
+
+
+

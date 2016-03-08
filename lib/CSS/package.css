@@ -1,0 +1,47 @@
+@font-face{
+	font-family: Quark;
+	src:url("./Quark-LightBold/Quark-Light.otf");
+}
+.packagebackground{
+	width: 100%;
+	min-height: 500px;
+	float: left;
+	background-image: url("../src/img/package.jpg");
+	background-position: 0px -200px;
+	padding-top: 10%;
+	padding-left: 2%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.packageHeader{
+	background-color: rgba(255,255,255,0.8);
+	width: 28%;
+	padding: 20px 15px;
+	margin: 0px 25px;
+	font-family: Quark;
+	font-size: 30px;
+	font-weight: 700;
+	float: left;
+}
+.packageHeader:hover{
+	background-color: rgba(0,0,0,0.8);
+	color:#fff;
+	cursor: pointer;
+}
+	.packageArrow{
+			width: 12%;
+			float: right;
+		}
+		.packageArrow img{
+			width: 100%;
+		}
+.packageBody{
+	background-color: rgba(255,255,255,0.8);
+	width: 100%;
+	padding: 20px 15px;
+	font-family: Quark;
+	font-size: 24px;
+	margin:3px 0;
+	float: left;
+	line-height: 1.5;
+}

@@ -1,0 +1,95 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+@font-face{
+	font-family: Quark;
+	src:url("./Quark-LightBold/Quark-Light.otf");
+}
+.user{
+	width: 20%;
+	float: left; 
+	padding: 5px;
+	padding-top: 10px;
+}
+.nav-bar{
+	background: #fff;
+	width: 100%;
+	float: left;
+	height: 75px;
+	padding: 5px;
+	font-family: Quark;
+}
+	.logo{
+		width: 30%;
+		height: 100%;
+		float: left;
+		text-align: center;
+	}
+		.logo img{
+			width: 46%;
+		}
+	.menu{
+		width: 50%;
+		height: 100%;
+		float: left;
+	}
+		.icon{
+			padding: 5px;
+			border-left: 1px solid #eee;
+			width: 12%;
+			height: 100%;
+			float:left;
+			position: relative;
+			text-align: center;
+		}
+		.icon-active{
+			padding: 5px;
+			border-left: 1px solid #eee;
+			width: 12%;
+			height: 100%;
+			float:left;
+			position: relative;
+			text-align: center;
+			background-color: #44BBFF;
+		}
+		.icon:hover{
+			cursor:pointer;
+			background-color: #44BBFF;
+		}
+		.icon img{
+			width: 60%;
+		}
+		.icon-detail{
+			min-width: 100%;
+			padding:5px 10px;
+			background-color: #44BBFF;
+			color: #fff;
+			font-weight: 700;
+			position: absolute;
+			bottom: -35px;
+			left: 0px;
+			z-index: 999;
+		}
+.footer{
+	float: left;
+	width: 100%;
+	height: 68px;
+}
+.button{
+	width: 50%;
+	height: 50%;
+     padding: 5px;
+     background-color: #44BBFF;
+     color:#fff;
+     float: left;
+     text-align: center;
+     font-weight: 700;
+
+     }
+.button:hover{
+	cursor:pointer;
+}

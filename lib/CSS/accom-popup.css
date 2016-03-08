@@ -1,0 +1,36 @@
+.accom-poppup{
+	background-color: #fff;
+	border-radius: 3px;
+}
+	.accom-poppup-pic{
+		width: 100%;
+		float: left;
+		position: relative;
+	}
+		.accom-poppup-pic img{
+			width: 100%;
+		}
+		.accom-poppup-left{
+			position: absolute;
+			top: 0px;
+			left: 0;
+			width: 15%;
+			height: 100%;
+		}
+		.accom-poppup-right{
+			position: absolute;
+			top: 0px;
+			right: 0;
+			width: 15%;
+			height: 100%;
+		}
+		.accom-poppup-left-right-arrow{
+			width: 100%;
+			float: left;
+			padding: 10px 53px;
+			position: absolute;
+			top: 50%;
+		}
+			.accom-poppup-left-right-arrow img{
+				width: 100%;
+			}

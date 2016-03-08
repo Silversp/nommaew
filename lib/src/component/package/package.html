@@ -1,0 +1,30 @@
+<main  class='packagebackground'>
+<div class ="row">
+	<div class="packageHeader" ng-init="show = false" ng-click="show = !show;show2= false;home.createMap()">
+		<div class="text">
+			Package นำเสนอ
+		</div>
+		<div class="packageArrow">
+			<img src="./lib/src/img/navigate8.png">
+		</div>
+	</div>
+	<div class="packageHeader" ng-init="show2 = false" ng-click="show2= !show2; show = false">
+		<div class="text">
+			นวดแผนไทย
+		</div>
+
+		<div class="packageArrow">
+			<img src="./lib/src/img/navigate8.png">
+		</div>
+	</div>
+	
+	</div>
+	<div class ="row">
+	<div class="packageBody" ng-if="show">
+		Package1
+	</div>
+	<div class="packageBody" ng-show="show2">
+	</div>
+	</div>
+	
+</main>
