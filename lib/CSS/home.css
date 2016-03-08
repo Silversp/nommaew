@@ -7,31 +7,48 @@
 }
 .background1{
 	width: 100%;
-	min-height: 500px;
+	min-height: 83%;
 	float: left;
 	background-image: url("../src/img/home1.jpg");
-	background-position: 0px 0px;
 	padding-top: 15%;
 	padding-left: 2%;
-
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 .background2{
 	width: 100%;
 	min-height: 500px;
 	float: left;
 	background-image: url("../src/img/home.jpg");
-	background-position: 0px -25px;
 	padding-top: 15%;
 	padding-left: 2%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 .background3{
 	width: 100%;
 	min-height: 500px;
 	float: left;
 	background-image: url("../src/img/home2.jpg");
-	background-position: 0px -10px;
 	padding-top: 15%;
 	padding-left: 2%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 .header{
 	background-color: rgba(255,255,255,0.8);

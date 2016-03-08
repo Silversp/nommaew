@@ -7,14 +7,15 @@
 }
 .contactusbackground{
 	width: 100%;
-	min-height: 500px;
+	min-height: 83%;
 	float: left;
-	background-image: url("../src/img/contact.jpg");
-	background-position: 0px -200px;
+	background: url("../src/img/contact.jpg") no-repeat center center fixed; 
 	padding-top: 10%;
 	padding-left: 2%;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .row{
 	width:100%;

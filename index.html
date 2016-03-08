@@ -80,13 +80,15 @@
 			</div>
 		</div>
 		<div class="user">
-			<div class="button" ng-click="login()">
+			<div class="button" ng-click="login()" ng-show="!LoginStatus">
 				Login
 			</div> 
-
+			<div class="user-detail" ng-show="LoginStatus">
+				{{loginDetail}}
+			</div> 
 		</div>
 	</div>
-	<div ui-view></div>
+	<div class="index-body" ui-view></div>
 	<div class="footer"></div>
 </body>
 </html>
