@@ -1,3 +1,31 @@
-<main>
-	<div style="background-color: #fff">sdfsdfsdf</div>
+<main class='reservbackground'>
+	<div class="register" ng-hide="member.registerStatus">
+		<div class="reserv-row">
+			<div class="register-text">
+				สมัคสมาชิกก่อน
+			</div>
+		</div>
+		<div class="reserv-row2">
+			<div class="register-button">
+				register
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="reserv-header">
+			<input type="date" ng-model="member.date" ng-change="member.dateSelect()"></input>
+		</div>
+	</div>
+	<div class="row">
+		<table>
+			<tbody ng-repeat="(key,data) in member.room">
+				<tr ng-repeat="(key2,data2) in data[member.heightRate]">
+					<td><input type="checkbox"></input></td>
+					<td>{{data.Type}}</td>
+					<td>{{data2.room_color}}</td>
+					<td>{{data2.price}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </main>

@@ -6,7 +6,9 @@ angular
     'controller.login',
     'controller.accom',
     'controller.accomPopup',
-    'LocalStorageModule'
+     'LocalStorageModule',
+    'controller.member'
+   
   ])
   .controller('appRun', appRun)
 appRun.$inject = ['$rootScope', '$state', '$scope', '$uibModal', '$http']
@@ -15,6 +17,7 @@ function appRun ($rootScope, $state, $scope, $uibModal, $http) {
   $scope.changeStage = changeStage
   $scope.hover = false
   $scope.login = login
+  $rootScope.LoginStatus = true
   function changeStage (index) {
     for (var n = 0;n < $scope.show.length;n++) {
       $scope.show[n] = false
@@ -45,7 +48,7 @@ function appRun ($rootScope, $state, $scope, $uibModal, $http) {
           alert('login Success')
           $rootScope.LoginStatus = true
           $scope.loginDetail = {
-            'Name': res.data
+            'Name': res.data[0].username
           }
         }
       }, function error (res) {

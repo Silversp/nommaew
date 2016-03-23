@@ -32,7 +32,9 @@ function config($stateProvider,$urlRouterProvider){
 	$stateProvider
 	.state('4',{
 		url:'/reservation',
-		templateUrl:'./lib/src/component/reserv/reserv.html'
+		templateUrl:'./lib/src/component/reserv/reserv.html',
+		controller: 'memberContorller',
+		controllerAs: 'member'
 	})
 	$stateProvider
 	.state('5',{

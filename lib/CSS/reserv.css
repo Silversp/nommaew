@@ -1,0 +1,62 @@
+@font-face{
+	font-family: Quark;
+	src:url("./Quark-LightBold/Quark-Light.otf");
+}
+.reservbackground{
+	width: 100%;
+	min-height: 83%;
+	float: left;
+	background-image: url("../src/img/reserv.jpg");
+	background-position: 0px -2px;
+	padding: 5% 2% ;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+.reserv-row{
+	width: 100%;
+	float: left;
+}
+.reserv-row2{
+	width: 100%;
+	float: left;
+	padding: 2px 30%;
+}
+.register{
+	width: 100%;
+	float: left;
+	padding: 5px 30%;
+}
+	.register-text{
+		width: 100%;
+		float: left;
+		font-family: Quark;
+		text-align: center;
+	}
+	.register-button{
+		width: 100%;
+		height: 40px;
+		padding: 10px	5px;
+		background-color: #44BBFF;
+		color:#fff;
+		float: left;
+		text-align: center;
+		font-weight: 700;
+	}
+	.register-button:hover{
+		cursor:pointer;
+		background-color: #22313F;
+	}
+.reserv-header{
+	background-color: rgba(0,0,0,0.8);
+	width: 25%;
+	padding: 20px 15px;
+	font-family: Quark;
+	font-size: 30px;
+	font-weight: 700;
+	float: left;
+}

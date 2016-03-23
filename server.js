@@ -5,7 +5,7 @@ var MysqlQ = require('./Model/MysqlQ');
 app.use(express.static(__dirname))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.get('/room', MysqlQ.getRoom );
+app.get('/reservDate',MysqlQ.getReserved)
 app.get('/member', MysqlQ.getMember );
 app.get('/rent', MysqlQ.getUserRent );
 app.get('/staffrent', MysqlQ.getStaffRent );
