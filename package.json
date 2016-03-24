@@ -16,7 +16,8 @@
     "body-parser": "^1.14.2",
     "express": "^4.13.4",
     "moment": "^2.12.0",
-    "mysql": "^2.10.2"
+    "mysql": "^2.10.2",
+    "q": "^1.4.1"
   },
   "devDependencies": {},
   "repository": {

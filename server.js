@@ -1,16 +1,17 @@
-var express = require('express');
-var app = express();
+var express = require('express')
+var app = express()
 var bodyParser = require('body-parser')
-var MysqlQ = require('./Model/MysqlQ');
+var MysqlQ = require('./Model/MysqlQ')
 app.use(express.static(__dirname))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.get('/reservDate',MysqlQ.getReserved)
-app.get('/member', MysqlQ.getMember );
-app.get('/rent', MysqlQ.getUserRent );
-app.get('/staffrent', MysqlQ.getStaffRent );
-app.get('/roomrent', MysqlQ.getStaffRent );
-app.post('/login', MysqlQ.login );
+app.get('/reservDate', MysqlQ.getReserved)
+app.get('/member', MysqlQ.getMember)
+app.get('/rent', MysqlQ.getUserRent)
+app.get('/staffrent', MysqlQ.getStaffRent)
+app.get('/roomrent', MysqlQ.getStaffRent)
+app.post('/login', MysqlQ.login)
+app.post('/reserv', MysqlQ.reservRoom)
 app.listen(8000, function () {
-  console.log('Example app listening on port 8000!');
-});
+  console.log('Example app listening on port 8000!')
+})

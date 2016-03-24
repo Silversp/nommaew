@@ -13,19 +13,32 @@
 	</div>
 	<div class="row">
 		<div class="reserv-header">
-			<input type="date" ng-model="member.date" ng-change="member.dateSelect()"></input>
+			<input type="date" ng-model="member.inDate" ng-change="member.inDateSelect()">
+		</div>
+		<div class="reserv-header">
+			<input type="date" ng-model="member.outDate" min="{{member.minOut}}" ng-change="member.outDateSelect()">
 		</div>
 	</div>
 	<div class="row">
 		<table>
 			<tbody ng-repeat="(key,data) in member.room">
 				<tr ng-repeat="(key2,data2) in data[member.heightRate]">
-					<td><input type="checkbox"></input></td>
+					<td><input type="checkbox"  ng-click="member.selectCheck(data2.room_detail_id,data2.price*member.days)"></td>
 					<td>{{data.Type}}</td>
 					<td>{{data2.room_color}}</td>
-					<td>{{data2.price}}</td>
+					<td>{{data2.price*member.days}}</td>
 				</tr>
 			</tbody>
 		</table>
+	</div>
+	<div class="row">
+		<div class="Total-Price" ng-if="member.room">
+			ราคารวม : {{member.net}} บาท
+		</div>
+	</div>
+	<div class="row" ng-if="member.room">
+		<div class="reserv-submit">
+			<button type="button" ng-click="member.reserv()">จอง</button>
+		</div>
 	</div>
 </main>
