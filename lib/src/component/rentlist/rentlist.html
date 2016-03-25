@@ -1,0 +1,73 @@
+<main class='gallerybackground'>
+	<div class="row">
+		<table border=1 style="background-color:#fff">
+			<thead>
+				<tr>
+					<td>
+						ประเภทห้องพัก
+					</td>
+					<td>
+						วันที่เข้าพัก
+					</td>
+					<td>
+						วันที่ออก
+					</td>
+					<td>
+						ราคาต่อคืน
+					</td>
+					<td>
+						จำนวนวันที่เข้าพัก
+					</td>
+					<td>
+						ราคารวม
+					</td>
+					<td>
+						วันที่จอง
+					</td>
+					<td>
+						สถานะการจอง
+					</td>
+					<td>
+						ผู้จอง
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="data in list.datas">
+					<td>
+						{{data.type}} สี {{data.room_color}}
+					</td>
+					<td>
+						{{data.Datein}}
+					</td>
+					<td>
+						{{data.Dateout}}
+					</td>
+					<td>
+						{{data.price}}
+					</td>
+					<td>
+						{{list.dayAmount(data.Datein,data.Dateout)}}
+					</td>
+					<td>
+						{{list.dayAmount(data.Datein,data.Dateout)*data.price}}
+					</td>
+					<td>
+						{{data.rent_date}}
+					</td>
+					<td>
+						<select ng-model='data.Statusrent' ng-disabled="list.userType < 1" ng-change="list.changeStatus(data.Crent,data.Statusrent)">
+							<option value="0">จอง</option>
+							<option value="1">จ่ายเงินแล้ว</option>
+							<option value="2">Check-in</option>
+							<option value="3">Check-out/Expire</option>
+						</select>
+					</td>
+					<td>
+						{{data.Name}} {{data.Surname}}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+  </div>
+</main>
