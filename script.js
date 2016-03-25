@@ -7,7 +7,9 @@ angular
     'controller.accom',
     'controller.accomPopup',
     'LocalStorageModule',
-    'controller.member'
+    'controller.member',
+    'controller.register',
+    'controller.rentList'
 
   ])
   .controller('appRun', appRun)
@@ -17,12 +19,14 @@ function appRun ($rootScope, $state, $scope, $uibModal, $http) {
   $scope.changeStage = changeStage
   $scope.hover = false
   $scope.login = login
-  $rootScope.LoginStatus = true
-  $rootScope.loginDetail = {
-    'Name': 'test',
-    'Id': 7,
-    'type': 1
-  }
+  // $rootScope.LoginStatus = true
+  // $rootScope.loginDetail = {
+  //   'Name': 'admin',
+  //   'Id': 9,
+  //   'type': 1,
+  //   'token': 'admin',
+  //   'userName': 'admin'
+  // }
 
   function changeStage (index) {
     for (var n = 0;n < $scope.show.length;n++) {
@@ -55,9 +59,11 @@ function appRun ($rootScope, $state, $scope, $uibModal, $http) {
           alert('login Success')
           $rootScope.LoginStatus = true
           $rootScope.loginDetail = {
-            'Name': res.data[0].Username,
+            'Name': res.data[0].Name,
             'Id': res.data[0].Userid,
-            'type': res.data[0].Usertype
+            'type': res.data[0].Usertype,
+            'userName': res.data[0].Username,
+            'token': res.data[0].Pass
           }
         }
       }, function error (res) {

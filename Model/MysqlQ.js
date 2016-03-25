@@ -1,4 +1,5 @@
 var mysql = require('mysql')
+const crypto = require('crypto')
 var Q = require('q')
 var pool = mysql.createPool({
   host: 'localhost',
@@ -13,7 +14,94 @@ module.exports = {
   login: login,
   getStaffRent: getStaffRent,
   reservRoom: reservRoom,
+  register: register,
+  changeStatus: changeStatus,
   getRoomRent: getRoomRent
+}
+function changeStatus (req, res) {
+  var data = req.body
+  var user = req.get('user')
+  var pass = req.get('token')
+  console.log(data, user, pass)
+  checkAuthen(user, pass).then(function () {
+    pool.getConnection(function (err, connection) {
+      if (err) {
+        res.status(500).send(err)
+        console.error(err)
+        return
+      } else {
+        var sql = 'UPDATE rent set rent.Statusrent = "' + data.status + '" WHERE rent.Crent = "' + data.rentId + '"'
+        connection.query(sql, function (err, rows) {
+          console.log(sql)
+          if (err) {
+            res.status(500).send(err)
+            console.error(err)
+            return
+          } else {
+            console.log(true)
+            res.send('true')
+          }
+          connection.release()
+          return
+        })
+      }
+    })
+  }).catch(function (err) {
+    res.status(500).send(err)
+    console.error(err)
+  })
+}
+function checkAuthen (user, pass) {
+  var defer = Q.defer()
+  var query = 'SELECT Usertype FROM member where username="' + user + '" and pass="' + pass + '"'
+  pool.getConnection(function (err, connection) {
+    if (err) {
+      defer.reject(err)
+    } else {
+      connection.query(query, function (err, rows) {
+        if (err) {
+          defer.reject(err)
+        } else {
+          console.log(rows[0])
+          if (parseInt(rows[0].Usertype, 10) >= 1) {
+            defer.resolve(true)
+          } else {
+            defer.reject('Authen fail Plese Re-login')
+          }
+        }
+        connection.release()
+      })
+    }
+
+  })
+  return defer.promise
+}
+function register (req, res) {
+  const hash = crypto.createHash('sha256')
+  var userData = req.body
+  hash.update(userData.password)
+  var pass = hash.digest('hex')
+  pool.getConnection(function (err, connection) {
+    if (err) {
+      res.status(500).send(err)
+      console.error(err)
+      return
+    } else {
+      var sql = "INSERT INTO `member`( `Name`, `Surname`, `Username`, `Pass`, `Usertype`) VALUES ('" + userData.name + "','" + userData.sName + "','" + userData.username + "','" + pass + "','" + 0 + "')"
+      connection.query(sql, function (err, rows) {
+        console.log(sql)
+        if (err) {
+          res.status(500).send(err)
+          console.error(err)
+          return
+        } else {
+          res.send('true')
+        }
+        connection.release()
+        return
+      })
+    }
+  })
 }
 function reservRoom (req, res) {
   var resrvData = req.body
@@ -107,6 +195,7 @@ function getReserved (req, res) {
   pool.getConnection(function (err, connection) {
     if (err) {
       res.status(500).send(err)
+      console.error(err)
       return
     }
     var sql = "SELECT `room_detail_id` FROM `detail` NATURAL JOIN `rent` where '" + inDate + "'BETWEEN detail.Datein AND detail.Dateout OR '" + outDate + "' BETWEEN detail.Datein AND detail.Dateout OR detail.Datein BETWEEN '" + inDate + "' AND '" + outDate + "'OR detail.Dateout BETWEEN '" + inDate + "' AND '" + outDate + "'AND rent.Statusrent < 3"
@@ -131,6 +220,7 @@ function getRoom (param, res) {
   pool.getConnection(function (err, connection) {
     if (err) {
       res.status(500).send(err)
+      console.error(err)
       return
     }
     if (param.length !== 0) {
@@ -141,6 +231,7 @@ function getRoom (param, res) {
     connection.query(sql, function (err, rows) {
       if (err) {
         res.status(500).send(err)
+        console.error(err)
         return
       }
       rows.forEach(function (value) {
@@ -168,11 +259,13 @@ function getMember (req, res) {
   pool.getConnection(function (err, connection) {
     if (err) {
       res.status(500).send(err)
+      console.error(err)
       return
     }
     connection.query('SELECT Name,Surname,Username  FROM member where Userid=' + id, function (err, rows) {
       if (err) {
         res.status(500).send(err)
+        console.error(err)
         return
       }
       res.send(rows)
@@ -185,28 +278,34 @@ function getUserRent (req, res) {
   pool.getConnection(function (err, connection) {
     if (err) {
       res.status(500).send(err)
+      console.error(err)
       return
     }
-    connection.query('SELECT *  FROM rent join detail  where Booking=' + id + ' and rent.crent=detail.crent', function (err, rows) {
+    var sql = 'SELECT * FROM rent join detail NATURAL JOIN room_detail NATURAL JOIN room NATURAL JOIN member  where Booking=' + id + ' and rent.crent=detail.crent AND rent.Booking = member.Userid order by rent_date'
+    var a = connection.query(sql, function (err, rows) {
       if (err) {
         res.status(500).send(err)
+        console.error(err)
         return
       }
       res.send(rows)
       connection.release()
     })
+    console.log(a.sql)
   })
-
 }
 function getStaffRent (req, res) {
   pool.getConnection(function (err, connection) {
     if (err) {
       res.status(500).send(err)
+      console.error(err)
       return
     }
-    connection.query('SELECT *  FROM rent join detail  where  rent.crent=detail.crent', function (err, rows) {
+    var sql = 'SELECT * FROM rent join detail NATURAL JOIN room_detail NATURAL JOIN room NATURAL JOIN member  where rent.crent=detail.crent AND rent.Booking = member.Userid order by rent_date'
+    connection.query(sql, function (err, rows) {
       if (err) {
         res.status(500).send(err)
+        console.error(err)
         return
       }
       res.send(rows)
@@ -218,11 +317,13 @@ function getRoomRent (req, res) {
   pool.getConnection(function (err, connection) {
     if (err) {
       res.status(500).send(err)
+      console.error(err)
       return
     }
     connection.query('SELECT *  FROM detail join room where room.nroom=detail.nroom', function (err, rows) {
       if (err) {
         res.status(500).send(err)
+        console.error(err)
         return
       }
       res.send(rows)
@@ -232,16 +333,21 @@ function getRoomRent (req, res) {
 }
 function login (req, res) {
   var param = req.body
-  var query = 'SELECT `Userid`, `Username`, `Usertype` FROM member where username="' + param.user + '" and pass="' + param.pass + '"'
+  const hash = crypto.createHash('sha256')
+  hash.update(param.pass)
+  var pass = hash.digest('hex')
+  var query = 'SELECT * FROM member where username="' + param.user + '" and pass="' + pass + '"'
   console.log(query)
   pool.getConnection(function (err, connection) {
     if (err) {
       res.status(500).send(err)
+      console.error(err)
       return
     }
     connection.query(query, function (err, rows) {
       if (err) {
         res.status(500).send(err)
+        console.error(err)
         return
       }
       res.send(rows)
