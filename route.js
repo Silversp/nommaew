@@ -27,7 +27,9 @@ function config ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('3', {
       url: '/package',
-      templateUrl: './lib/src/component/package/package.html'
+      templateUrl: './lib/src/component/package/package.html',
+      controller: 'homeContorller',
+      controllerAs: 'home'
     })
   $stateProvider
     .state('4', {
@@ -44,7 +46,9 @@ function config ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('6', {
       url: '/contactUs',
-      templateUrl: './lib/src/component/contactus/contactus.html'
+      templateUrl: './lib/src/component/contactus/contactus.html',
+      controller: 'homeContorller',
+      controllerAs: 'home'
     })
   $stateProvider
     .state('7', {
@@ -59,5 +63,12 @@ function config ($stateProvider, $urlRouterProvider) {
       templateUrl: './lib/src/component/rentlist/rentlist.html',
       controller: 'rentListContorller',
       controllerAs: 'list'
+    })
+  $stateProvider
+    .state('9', {
+      url: '/editaccount',
+      templateUrl: './lib/src/component/editprofile/editprofile.html',
+      controller: 'editContorller',
+      controllerAs: 'edit'
     })
 }

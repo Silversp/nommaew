@@ -9,13 +9,19 @@ angular
     'LocalStorageModule',
     'controller.member',
     'controller.register',
-    'controller.rentList'
+    'controller.rentList',
+    'controller.edit'
 
-  ])
+  ]).run(['$rootScope', '$state', '$stateParams',
+  function ($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state
+    $rootScope.$stateParams = $stateParams
+  }
+])
   .controller('appRun', appRun)
 appRun.$inject = ['$rootScope', '$state', '$scope', '$uibModal', '$http']
 function appRun ($rootScope, $state, $scope, $uibModal, $http) {
-  $scope.show = [true, false, false, false, false, false, false]
+  $rootScope.show = [true, false, false, false, false, false, false]
   $scope.changeStage = changeStage
   $scope.hover = false
   $scope.login = login
@@ -27,12 +33,11 @@ function appRun ($rootScope, $state, $scope, $uibModal, $http) {
   //   'token': 'admin',
   //   'userName': 'admin'
   // }
-
   function changeStage (index) {
     for (var n = 0;n < $scope.show.length;n++) {
-      $scope.show[n] = false
+      $rootScope.show[n] = false
     }
-    $scope.show[index] = true
+    $rootScope.show[index] = true
     $state.go(index.toString())
   }
   function login () {
@@ -63,6 +68,7 @@ function appRun ($rootScope, $state, $scope, $uibModal, $http) {
             'Id': res.data[0].Userid,
             'type': res.data[0].Usertype,
             'userName': res.data[0].Username,
+            'surName': res.data[0].Surname,
             'token': res.data[0].Pass
           }
         }

@@ -41,8 +41,7 @@
 			<button type="button" ng-click="member.reserv()">จอง</button>
 		</div>
 	</div>
-
-	<div class="row" ng-if="member.room">
+	<div class="row" ng-show="member.registerStatus">
 		<div class="reserv-submit">
 			<button type="button" ng-click="member.history()">ประวัติการจอง</button>
 		</div>

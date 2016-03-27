@@ -19,6 +19,7 @@
 	<script type="text/javascript" src="lib/src/component/login/login.js"></script>
 	<script type="text/javascript" src="lib/src/component/register/register.js"></script>
 	<script type="text/javascript" src="lib/src/component/rentlist/rentlist.js"></script>
+	<script type="text/javascript" src="lib/src/component/editprofile/editprofile.js"></script>
 
 
 	<script type="text/javascript" src="script.js"></script>
@@ -89,7 +90,7 @@
 		</div>
 		<div class="user">
 			<div class="button" ng-click="login()" ng-show="!LoginStatus">
-				Login
+				Login {{$state.current.name}}
 			</div> 
 
 			<div class="user-detail" ng-show="LoginStatus">
