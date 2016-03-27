@@ -1,5 +1,6 @@
 <main class='gallerybackground'>
 	<div class="row">
+	<div class="rentlist">
 		<table border=1 style="background-color:#fff">
 			<thead>
 				<tr>
@@ -16,7 +17,7 @@
 						ราคาต่อคืน
 					</td>
 					<td>
-						จำนวนวันที่เข้าพัก
+						จำนวนวันเข้าพัก
 					</td>
 					<td>
 						ราคารวม
@@ -35,7 +36,7 @@
 			<tbody>
 				<tr ng-repeat="data in list.datas">
 					<td>
-						{{data.type}} สี {{data.room_color}}
+						{{data.Type}} สี {{data.room_color}}
 					</td>
 					<td>
 						{{data.Datein}}
@@ -69,5 +70,6 @@
 				</tr>
 			</tbody>
 		</table>
+		</div>
   </div>
 </main>

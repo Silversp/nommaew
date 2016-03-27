@@ -25,6 +25,7 @@
 	width: 100%;
 	float: left;
 	padding: 2px 30%;
+	
 }
 .register{
 	width: 100%;
@@ -32,10 +33,14 @@
 	padding: 5px 30%;
 }
 	.register-text{
-		width: 100%;
+		width: 50%;
 		float: left;
 		font-family: Quark;
 		text-align: center;
+		background-color: rgba(0,255,154,0.7);
+		font-size: 18 ;
+		padding: 10px 5px;
+    margin-left: 130px;
 	}
 	.register-button{
 		width: 100%;

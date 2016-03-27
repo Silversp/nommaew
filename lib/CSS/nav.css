@@ -85,7 +85,7 @@ body{
 	min-height: 83%;
 }
 .button{
-	width: 50%;
+	width: 45%;
 	height: 50%;
 	padding: 5px;
 	background-color: #44BBFF;
@@ -104,4 +104,15 @@ body{
 	padding: 5px;
 	float: left;
 	text-align: left;
+}
+.buttonout{
+	width: 45%;
+	height: 50%;
+	padding: 5px;
+	background-color: #44BBFF;
+	color:#fff;
+	float: left;
+	text-align: center;
+	font-weight: 700;
+	margin-left: 10px;
 }

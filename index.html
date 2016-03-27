@@ -34,6 +34,8 @@
 	<link rel="stylesheet" type="text/css" href="./lib/css/gallery.css">
 	<link rel="stylesheet" type="text/css" href="./lib/css/accom-popup.css">
 	<link rel="stylesheet" type="text/css" href="./lib/css/reserv.css">
+	<link rel="stylesheet" type="text/css" href="./lib/css/register.css">
+	<link rel="stylesheet" type="text/css" href="./lib/css/rentlist.css">
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body ng-app='appModule'>
@@ -89,10 +91,17 @@
 			<div class="button" ng-click="login()" ng-show="!LoginStatus">
 				Login
 			</div> 
+
 			<div class="user-detail" ng-show="LoginStatus">
 				{{loginDetail.Name}}
 			</div> 
+			
+			<div class="buttonout">
+				Logout
+			</div> 
+			
 		</div>
+
 	</div>
 	<div class="index-body" ui-view></div>
 	<div class="footer"></div>
