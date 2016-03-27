@@ -20,6 +20,8 @@
 	<script type="text/javascript" src="lib/src/component/register/register.js"></script>
 	<script type="text/javascript" src="lib/src/component/rentlist/rentlist.js"></script>
 	<script type="text/javascript" src="lib/src/component/editprofile/editprofile.js"></script>
+  <script type="text/javascript" src="lib/src/component/gallery/gallery.js"></script>
+  <script type="text/javascript" src="lib/src/component/gallerypopup/gallerypopup.js"></script>
 
 
 	<script type="text/javascript" src="script.js"></script>
@@ -90,16 +92,16 @@
 		</div>
 		<div class="user">
 			<div class="button" ng-click="login()" ng-show="!LoginStatus">
-				Login {{$state.current.name}}
+				Login 
 			</div> 
-
+      <div class="buttonout" >
+				Logout 
+			</div> 
 			<div class="user-detail" ng-show="LoginStatus">
 				{{loginDetail.Name}}
 			</div> 
 			
-			<div class="buttonout">
-				Logout
-			</div> 
+			
 			
 		</div>
 

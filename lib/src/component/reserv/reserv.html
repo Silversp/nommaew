@@ -13,9 +13,15 @@
 	</div>
 	<div class="row" ng-show="member.registerStatus">
 		<div class="reserv-header">
-			<input type="date" ng-model="member.inDate" ng-change="member.inDateSelect()">
+		<div class="colorre">
+		  วันที่เข้าพัก		
+		  </div>	
+		  <input type="date" ng-model="member.inDate" ng-change="member.inDateSelect()">
 		</div>
 		<div class="reserv-header">
+		<div class="colorre">
+		  วันที่ออก		
+		  </div>	
 			<input type="date" ng-model="member.outDate" min="{{member.minOut}}" ng-change="member.outDateSelect()">
 		</div>
 	</div>
@@ -44,6 +50,8 @@
 	<div class="row" ng-show="member.registerStatus">
 		<div class="reserv-submit">
 			<button type="button" ng-click="member.history()">ประวัติการจอง</button>
+			<button type="button" >แก้ไขข้อมูลส่วนตัว</button>
 		</div>
 	</div>
+	
 </main>

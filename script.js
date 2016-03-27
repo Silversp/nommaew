@@ -10,7 +10,9 @@ angular
     'controller.member',
     'controller.register',
     'controller.rentList',
-    'controller.edit'
+    'controller.edit',
+    'controller.gallery',
+    'controller.gallerypopup'
 
   ]).run(['$rootScope', '$state', '$stateParams',
   function ($rootScope, $state, $stateParams) {
