@@ -336,6 +336,7 @@ function login (req, res) {
   const hash = crypto.createHash('sha256')
   hash.update(param.pass)
   var pass = hash.digest('hex')
+  console.log(pass)
   var query = 'SELECT * FROM member where username="' + param.user + '" and pass="' + pass + '"'
   console.log(query)
   pool.getConnection(function (err, connection) {
