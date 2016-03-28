@@ -18,14 +18,26 @@
 	<div> 
   		<input type="text" ng-model="edit.user">
 	</div>
-	<div> 
-  		Password :
+	<input type="checkbox" ng-model="edit.changePass">เปลี่ยน Password</input>
+	<div ng-show="edit.changePass"> 
+  		Password-old :
 	</div> 
-	<div> 
-  		<input type="password" ng-model="edit.password">
+	<div ng-show="edit.changePass"> 
+  		<input type="password" ng-model="edit.passwordOld">
+	</div>
+	<div ng-show="edit.changePass"> 
+  		Password-new :
+	</div> 
+	<div ng-show="edit.changePass"> 
+  		<input type="password" ng-model="edit.passwordNew">
+	</div>
+	<div ng-show="edit.changePass"> 
+  		Recheck-Password-new :
+	</div> 
+	<div ng-show="edit.changePass"> 
+  		<input type="password" ng-model="edit.passwordNewCheck">
 	</div>
 	<div>
 		<button ng-click="edit.submit()">สมัคร</button>
 	</div>
-	szdsad
 </main>

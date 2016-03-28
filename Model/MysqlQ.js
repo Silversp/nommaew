@@ -16,7 +16,53 @@ module.exports = {
   reservRoom: reservRoom,
   register: register,
   changeStatus: changeStatus,
-  getRoomRent: getRoomRent
+  getRoomRent: getRoomRent,
+  accountSetting: accountSetting
+}
+function accountSetting (req, res) {
+  var data = req.body
+  var sql
+  if (data.changePassword) {
+    var hash = crypto.createHash('sha256')
+    hash.update(data.passwordOld)
+    var passOld = hash.digest('hex')
+    if (passOld === data.token) {
+      hash = crypto.createHash('sha256')
+      hash.update(data.passwordNew)
+      var passnew = hash.digest('hex')
+      sql = 'UPDATE member set member.name = "' + data.name + '", member.Surname = "' + data.sName + '", member.username = "' + data.username + '", member.pass = "' + passnew + '" WHERE member.Userid = "' + data.id + '"'
+    } else {
+      res.status(405).send('password เดิมไม่ถูกต้อง')
+      return
+    }
+  } else {
+    sql = 'UPDATE member set member.name = "' + data.name + '", member.Surname = "' + data.sName + '", member.username = "' + data.username + '" WHERE member.Userid = "' + data.id + '"'
+  }
+  pool.getConnection(function (err, connection) {
+    if (err) {
+      res.status(500).send(err)
+      console.error(err)
+      return
+    } else {
+      connection.query(sql, function (err, rows) {
+        console.log(sql)
+        if (err) {
+          res.status(500).send(err)
+          console.error(err)
+          return
+        } else {
+          console.log(true)
+          if (passnew) {
+            res.send(passnew)
+          } else {
+            res.send(false)
+          }
+        }
+        connection.release()
+        return
+      })
+    }
+  })
 }
 function changeStatus (req, res) {
   var data = req.body

@@ -98,6 +98,10 @@ body{
 	cursor:pointer;
 	background-color: #22313F;
 }
+.buttonout:hover{
+	cursor:pointer;
+	background-color: #22313F;
+}
 .user-detail{
 	width: 50%;
 	height: 50%;
