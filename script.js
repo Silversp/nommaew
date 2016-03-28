@@ -12,21 +12,20 @@ angular
     'controller.rentList',
     'controller.edit',
     'controller.gallery',
-    'controller.gallerypopup'
-
-  ]).run(['$rootScope', '$state', '$stateParams',
-  function ($rootScope, $state, $stateParams) {
-    $rootScope.$state = $state
-    $rootScope.$stateParams = $stateParams
-  }
-])
+    'controller.gallerypopup',
+    'LocalStorageModule'
+  ])
   .controller('appRun', appRun)
-appRun.$inject = ['$rootScope', '$state', '$scope', '$uibModal', '$http']
-function appRun ($rootScope, $state, $scope, $uibModal, $http) {
+appRun.$inject = ['$rootScope', '$state', '$scope', '$uibModal', '$http', 'localStorageService']
+function appRun ($rootScope, $state, $scope, $uibModal, $http, localStorageService) {
   $rootScope.show = [true, false, false, false, false, false, false]
   $scope.changeStage = changeStage
   $scope.hover = false
   $scope.login = login
+  if (localStorageService.get('login')) {
+    $rootScope.LoginStatus = localStorageService.get('login').status
+    $rootScope.loginDetail = localStorageService.get('login').loginDetail
+  }
   // $rootScope.LoginStatus = true
   // $rootScope.loginDetail = {
   //   'Name': 'admin',
@@ -73,6 +72,7 @@ function appRun ($rootScope, $state, $scope, $uibModal, $http) {
             'surName': res.data[0].Surname,
             'token': res.data[0].Pass
           }
+          localStorageService.set('login', {'status': $rootScope.LoginStatus,'loginDetail': $rootScope.loginDetail})
         }
       }, function error (res) {
         console.log(res)
