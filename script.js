@@ -22,6 +22,7 @@ function appRun ($rootScope, $state, $scope, $uibModal, $http, localStorageServi
   $scope.changeStage = changeStage
   $scope.hover = false
   $scope.login = login
+  $scope.logout = logout
   if (localStorageService.get('login')) {
     $rootScope.LoginStatus = localStorageService.get('login').status
     $rootScope.loginDetail = localStorageService.get('login').loginDetail
@@ -40,6 +41,12 @@ function appRun ($rootScope, $state, $scope, $uibModal, $http, localStorageServi
     }
     $rootScope.show[index] = true
     $state.go(index.toString())
+  }
+  function logout () {
+    delete $rootScope.LoginStatus
+    delete $rootScope.loginDetail
+    localStorageService.remove('login')
+    $state.reload()
   }
   function login () {
     var modalConfig = {
