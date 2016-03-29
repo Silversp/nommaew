@@ -41,7 +41,9 @@ function config ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('5', {
       url: '/gallery',
-      templateUrl: './lib/src/component/gallery/gallery.html'
+      templateUrl: './lib/src/component/gallery/gallery.html',
+      controller: 'galleryContorller',
+      controllerAs: 'gallery'
     })
   $stateProvider
     .state('6', {
