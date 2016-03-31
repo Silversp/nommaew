@@ -244,7 +244,8 @@ function getReserved (req, res) {
       console.error(err)
       return
     }
-    var sql = "SELECT `room_detail_id` FROM `detail` NATURAL JOIN `rent` where '" + inDate + "'BETWEEN detail.Datein AND detail.Dateout OR '" + outDate + "' BETWEEN detail.Datein AND detail.Dateout OR detail.Datein BETWEEN '" + inDate + "' AND '" + outDate + "'OR detail.Dateout BETWEEN '" + inDate + "' AND '" + outDate + "'AND rent.Statusrent < 3"
+    var sql = "SELECT `room_detail_id` FROM `detail` NATURAL JOIN `rent` where ('" + inDate + "'BETWEEN detail.Datein AND detail.Dateout OR '" + outDate + "' BETWEEN detail.Datein AND detail.Dateout OR detail.Datein BETWEEN '" + inDate + "' AND '" + outDate + "'OR detail.Dateout BETWEEN '" + inDate + "' AND '" + outDate + "') AND rent.Statusrent < 3"
+    console.log(sql)
     connection.query(sql, function (err, rows) {
       if (err) {
         res.status(500).send(err)
