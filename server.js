@@ -3,6 +3,7 @@ var app = express()
 var bodyParser = require('body-parser')
 var MysqlQ = require('./Model/MysqlQ')
 var parth = __dirname + '/lib/css'
+console.log(parth)
 app.use(express.static(__dirname))
 app.use(express.static('/lib/css', parth))
 app.use(bodyParser.urlencoded({ extended: false }))
