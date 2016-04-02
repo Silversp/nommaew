@@ -52,12 +52,13 @@
 }
 .header{
 	background-color: rgba(255,255,255,0.8);
-	width: 25%;
-	padding: 20px 15px;
+	width: 15%;
+	padding: 6px 15px;
 	font-family: Quark;
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: 700;
 	float: left;
+	margin-left: 25px;
 }
 	.text{
 		width: 85%;
@@ -70,6 +71,7 @@
 	}
 	.arrow img{
 		width: 100%;
+		padding-top: 8px;
 	}
 .header:hover{
 	background-color: rgba(0,0,0,0.8);

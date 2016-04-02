@@ -80,6 +80,7 @@ function appRun ($rootScope, $state, $scope, $uibModal, $http, localStorageServi
             'token': res.data[0].Pass
           }
           localStorageService.set('login', {'status': $rootScope.LoginStatus,'loginDetail': $rootScope.loginDetail})
+           $state.reload()
         }
       }, function error (res) {
         console.log(res)

@@ -1,5 +1,5 @@
 <main class='reservbackground'>
-	<div class="register" ng-hide="member.registerStatus">
+  <div class="register" ng-hide="member.registerStatus">
 		<div class="reserv-row">
 			<div class="register-text">
 				<B>กรุณาสมัครสมาชิกก่อน</B>
@@ -9,8 +9,12 @@
 			<div class="register-button" ng-click="member.register()">
 				สมัครสมาชิก
 			</div>
-		</div>
+			<div class="girl">
+			<img src="./lib/src/img/girl.png">
+			</div>
 	</div>
+	</div>
+  <div class="recenter">
 	<div class="row" ng-show="member.registerStatus">
 		<div class="reserv-header">
 		<div class="colorre">
@@ -25,7 +29,7 @@
 			<input type="date" ng-model="member.outDate" min="{{member.minOut}}" ng-change="member.outDateSelect()">
 		</div>
 	</div>
-	<div class="row">
+	<div class="row"><div class="Bgre">
 		<table>
 			<tbody ng-repeat="(key,data) in member.room">
 				<tr ng-repeat="(key2,data2) in data[member.heightRate]">
@@ -36,22 +40,28 @@
 				</tr>
 			</tbody>
 		</table>
-	</div>
-	<div class="row">
+	</div></div>
+	<div class="row"><div class="Bgre">
 		<div class="Total-Price" ng-if="member.room">
 			ราคารวม : {{member.net}} บาท
-		</div>
+		</div></div>
 	</div>
 	<div class="row" ng-if="member.room">
 		<div class="reserv-submit">
-			<button type="button" ng-click="member.reserv()">จอง</button>
+		<div class="rent1">
+			<button type="button" ng-click="member.reserv()">จองห้องพัก</button>
+		</div>
 		</div>
 	</div>
 	<div class="row" ng-show="member.registerStatus">
 		<div class="reserv-submit">
+		<div class="b1">
 			<button type="button" ng-click="member.history()">ประวัติการจอง</button>
-			<button type="button"  ng-click="member.edit()">แก้ไขข้อมูลส่วนตัว</button>
 		</div>
+		<div class="b2">
+			<button type="button"  ng-click="member.edit()">แก้ไขข้อมูลส่วนตัว</button>
+    </div>
+  </div>
 	</div>
 	
 </main>
