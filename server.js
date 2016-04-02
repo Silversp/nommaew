@@ -14,6 +14,6 @@ app.post('/reserv', MysqlQ.reservRoom)
 app.post('/signup', MysqlQ.register)
 app.put('/changeStatus', MysqlQ.changeStatus)
 app.put('/accountSetting', MysqlQ.accountSetting)
-app.listen(8000, function () {
+app.listen(process.env.PORT||8000, function () {
   console.log('Example app listening on port 8000!')
 })
