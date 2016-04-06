@@ -20,13 +20,14 @@
 }
 .packageHeader{
 	background-color: rgba(255,255,255,0.8);
-	width: 28%;
-	padding: 20px 15px;
+	width: 15%;
+	padding: 9px 26px;
 	margin: 0px 25px;
 	font-family: Quark;
-	font-size: 30px;
+	font-size: 23px;
 	font-weight: 700;
 	float: left;
+	border: 1px solid black;
 }
 .packageHeader:hover{
 	background-color: rgba(0,0,0,0.8);
@@ -39,12 +40,12 @@
 		}
 		.packageArrow img{
 			width: 100%;
+			padding-top: 6px;
 		}
 .packageBody{
 	background-color: rgba(255,255,255,0.8);
 	width: 100%;
 	padding: 20px 15px;
-	font-family: Quark;
 	font-size: 24px;
 	margin:3px 0;
 	float: left;
