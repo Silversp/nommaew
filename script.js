@@ -52,7 +52,8 @@ function appRun ($rootScope, $state, $scope, $uibModal, $http, localStorageServi
     var modalConfig = {
       templateUrl: './lib/src/component/login/login.html',
       controller: 'loginContorller',
-      controllerAs: 'login'
+      controllerAs: 'login',
+      size: 'sm'
     }
     var modalInstance = $uibModal.open(modalConfig)
     modalInstance.result.then(function (loginData) {
@@ -80,7 +81,7 @@ function appRun ($rootScope, $state, $scope, $uibModal, $http, localStorageServi
             'token': res.data[0].Pass
           }
           localStorageService.set('login', {'status': $rootScope.LoginStatus,'loginDetail': $rootScope.loginDetail})
-           $state.reload()
+          $state.reload()
         }
       }, function error (res) {
         console.log(res)
