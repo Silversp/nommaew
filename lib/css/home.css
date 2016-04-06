@@ -59,6 +59,7 @@
 	font-weight: 700;
 	float: left;
 	margin-left: 25px;
+	border: 1px solid black;
 }
 	.text{
 		width: 85%;

@@ -48,19 +48,15 @@
 	</div>
 	<div class="row" ng-if="member.room">
 		<div class="reserv-submit">
-		<div class="rent1">
-			<button type="button" ng-click="member.reserv()">จองห้องพัก</button>
-		</div>
+			<div class="buttonrent" ng-click="member.reserv()">จองห้องพัก</div>
 		</div>
 	</div>
 	<div class="row" ng-show="member.registerStatus">
 		<div class="reserv-submit">
-		<div class="b1">
-			<button type="button" ng-click="member.history()">ประวัติการจอง</button>
-		</div>
-		<div class="b2">
-			<button type="button"  ng-click="member.edit()">แก้ไขข้อมูลส่วนตัว</button>
-    </div>
+			<div class="buttonlist" ng-click="member.history()">ประวัติการจอง</div>
+		<p></p><br>
+			<div class="buttonedit"  ng-click="member.edit()">แก้ไขข้อมูลส่วนตัว</div>
+    
   </div>
 	</div>
 	
