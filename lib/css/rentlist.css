@@ -1,6 +1,6 @@
 .rentlist{
 	width:63%;
-	background-color: rgba(210,105,30,0.7);
+	background-color: #fff;
 	padding: 7px 8px;
 	margin-left: 300px;
 	margin-top: -90px;
@@ -9,4 +9,12 @@
 	color: #191970;
   padding: 5px;
   font-size: 22;
+}
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 400px; 
+    height: 300px
+}
+.td-hover:hover{
+	cursor: pointer;
 }

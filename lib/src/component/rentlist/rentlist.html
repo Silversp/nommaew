@@ -5,40 +5,40 @@
 	<div class="headerlist">
 	ประวัติการจอง
 	</div>
-		<table border=1 style="background-color:#fff">
+		<table class="table table-striped">
 			<thead >
 				<tr>
-					<td>
+					<td class="td-hover" ng-click="list.orderBy = 'Type'">
 						ประเภทห้องพัก
 					</td>
-					<td>
+					<td class="td-hover" ng-click="list.orderBy = 'DateinD'">
 						วันที่เข้าพัก
 					</td>
-					<td>
+					<td class="td-hover" ng-click="list.orderBy = 'DateoutD'">
 						วันที่ออก
 					</td>
-					<td>
+					<td class="td-hover" ng-click="list.orderBy = 'price'">
 						ราคาต่อคืน
 					</td>
-					<td>
+					<td class="td-hover" ng-click="list.orderBy = 'totalDate'">
 						จำนวนวันเข้าพัก
 					</td>
-					<td>
+					<td class="td-hover" ng-click="list.orderBy = 'totalPrice'">
 						ราคารวม
 					</td>
-					<td>
+					<td class="td-hover" ng-click="list.orderBy = 'rent_dateD'">
 						วันที่จอง
 					</td>
-					<td>
+					<td class="td-hover" ng-click="list.orderBy = 'Statusrent'">
 						สถานะการจอง
 					</td>
-					<td>
+					<td class="td-hover" ng-click="list.orderBy = 'Name'">
 						ผู้จอง
 					</td>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="data in list.datas">
+				<tr ng-repeat="data in list.datas | orderBy:list.orderBy">
 					<td>
 						{{data.Type}} สี {{data.room_color}}
 					</td>
@@ -52,10 +52,10 @@
 						{{data.price}}
 					</td>
 					<td>
-						{{list.dayAmount(data.Datein,data.Dateout)}}
+						{{data.totalDate}}
 					</td>
 					<td>
-						{{list.dayAmount(data.Datein,data.Dateout)*data.price}}
+						{{data.totalPrice}}
 					</td>
 					<td>
 						{{data.rent_date}}
